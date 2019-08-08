@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Article from "../article";
 import accordion from "../../decorators/accordion";
+import PropTypes from "prop-types";
 
 function ArticleList({ articles, isOpen, setOpenId }) {
   const setContainerRef = containerRef =>
@@ -28,6 +29,12 @@ function filterArticles(state) {
     .filter(art => !after || new Date(art.date) >= after)
     .filter(art => !before || new Date(art.date) <= before);
 }
+
+ArticleList.propTypes = {
+  articles: PropTypes.array.isRequired,
+  isOpen: PropTypes.func.isRequired,
+  setOpenId: PropTypes.func.isRequired
+};
 
 export default connect(state => ({ articles: filterArticles(state) }))(
   accordion(ArticleList)

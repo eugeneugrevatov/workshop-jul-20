@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { setAfterFilter, setBeforeFilter, setTitleFilter } from "../../ac";
 
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
+import PropTypes from "prop-types";
 
 function Filters({
   after,
@@ -53,6 +54,20 @@ function Filters({
     </div>
   );
 }
+
+Filters.propTypes = {
+  after: PropTypes.instanceOf(Date),
+  before: PropTypes.instanceOf(Date),
+  titleOptions: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string,
+      label: PropTypes.string
+    })
+  ),
+  setAfterFilter: PropTypes.func,
+  setBeforeFilter: PropTypes.func,
+  setTitleFilter: PropTypes.func
+};
 
 const mapStateToProps = state => ({
   after: state.filters.after,
