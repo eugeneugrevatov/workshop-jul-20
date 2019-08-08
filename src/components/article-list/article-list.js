@@ -22,14 +22,11 @@ function ArticleList({ articles, isOpen, setOpenId }) {
 }
 
 function filterArticles(state) {
+  const { after, before, title } = state.filters;
   return state.articles
-    .filter(art => !state.filters.title || art.title === state.filters.title)
-    .filter(
-      art => !state.filters.after || new Date(art.date) >= state.filters.after
-    )
-    .filter(
-      art => !state.filters.before || new Date(art.date) <= state.filters.before
-    );
+    .filter(art => !title || art.title === title)
+    .filter(art => !after || new Date(art.date) >= after)
+    .filter(art => !before || new Date(art.date) <= before);
 }
 
 export default connect(state => ({ articles: filterArticles(state) }))(
