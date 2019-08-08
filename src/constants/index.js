@@ -1,3 +1,9 @@
 export const INCREMENT = "INCREMENT";
 
 export const DELETE_ARTICLE = "DELETE_ARTICLE";
+
+export const SET_AFTER_FILTER = "SET_AFTER_FILTER";
+
+export const SET_BEFORE_FILTER = "SET_BEFORE_FILTER";
+
+export const SET_TITLE_FILTER = "SET_TITLE_FILTER";
