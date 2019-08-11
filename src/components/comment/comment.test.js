@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow, render, mount } from "enzyme";
+import { shallow } from "enzyme";
 import Comment from "./comment";
 import articles from "../../fixtures";
 import CommentDriver from "./comment.driver";
@@ -15,5 +15,9 @@ describe("<Comment />", () => {
 
   it("should render text", () => {
     expect(driver.get.text()).toBe(comment.text);
+  });
+
+  it("should render user", () => {
+    expect(driver.get.user()).toBe(comment.user);
   });
 });

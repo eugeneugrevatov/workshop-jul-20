@@ -4,12 +4,9 @@ import Article from "../article";
 import accordion from "../../decorators/accordion";
 import PropTypes from "prop-types";
 
-function ArticleList({ articles, isOpen, setOpenId }) {
-  const setContainerRef = containerRef =>
-    console.log("container: ", containerRef);
-
+export function ArticleList({ articles, isOpen, setOpenId }) {
   return (
-    <div ref={setContainerRef}>
+    <div data-id="articles-container">
       {articles.map(article => (
         <Article
           key={article.id}

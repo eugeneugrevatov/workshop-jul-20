@@ -5,10 +5,10 @@ import CommentList from "../comment-list";
 import { deleteArticle } from "../../ac";
 import PropTypes from "prop-types";
 
-function Article({ article, isOpen, onBtnClick, deleteArticle }) {
+export function Article({ article, isOpen, onBtnClick, deleteArticle }) {
   useEffect(() => {
     //subscribe
-    console.log("subscribe for ", article.id);
+    // console.log("subscribe for ", article.id);
 
     return () => console.log("unsubscribe", article.id);
   }, [article.id]);

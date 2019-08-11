@@ -5,7 +5,7 @@ function Comment({ comment }) {
   return (
     <div>
       <p data-id="comment-text">{comment.text}</p>
-      <b>{comment.user}</b>
+      <b data-id="comment-user">{comment.user}</b>
     </div>
   );
 }

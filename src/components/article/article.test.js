@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, render, mount } from "enzyme";
 import ArticleDriver from "./article.driver";
-import Article from "./article";
+import { Article } from "./article";
 import articles from "../../fixtures";
 
 const article = articles[0];
